@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto 01 - Curso de Vue.js</title>
+
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+
+<body>
+  <header style="text-align: center; color: white;">
+    <h1>Game Matador de Monstro</h1>
+  </header>
+  <div id="app">
+    <div class="panel scores">
+      <div class="score">
+        <img src="img/player.png" alt="player" class="imagemGamer">
+        <h1>Jogador</h1>
+        <div class="life-bar">
+          <div class="life" :class="{ danger: playerLife < 20}" :style="{width: playerLife + '%'}"></div>
+        </div>
+        <div>
+          <b>{{ playerLife }}%</b>
+        </div>
+      </div>
+      <div class="score">
+        <img src="img/monstro.png" alt="monstro" class="imagemGamer">
+        <h1>Monstro</h1>
+        <div class="life-bar">
+          <div class="life" :class="{ danger: monsterLife < 20}" :style="{width: monsterLife + '%'}"></div>
+        </div>
+        <div>
+          <b>{{ monsterLife }}%</b>
+        </div>
+      </div>
+    </div>
+    <div class="panel result" v-show="hasResult">
+      <h2 style="text-align: center;" :style="{color: color}">
+        {{msgResultado}}
+      </h2>
+    </div>
+    <div class="panel buttons">
+      <template v-if="showBtns">
+        <button class="btn atack" @click="attack(false)">Ataque</button>
+        <button class="btn atackesp" @click="attack(true)">Ataque Especial</button>
+        <button class="btn curar">Curar</button>
+        <button class="btn desisitir" @click="startGame">Desistir</button>
+      </template>
+      <button class="btn iniciargame" @click="startGame" v-else>Iniciar Jogo</button>
+    </div>
+    <div class="panel logs"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

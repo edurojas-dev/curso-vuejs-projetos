@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Roboto:wght@300&display=swap");
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #576574;
+  padding: 0 10px;
+}
+
+#app{
+  display: flex;
+  flex-direction: column;
+}
+
+.panel{
+  margin: 10px 5px;
+  padding: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+  background-color: white;
+  border-radius: 5px;
+}
+.imagemGamer{
+  width: 150px;
+}
+.scores{
+  display: flex;
+  justify-content: center;
+}
+
+.scores .score{
+  border: 0.5px solid #ccc;
+  border-radius: 20px;
+  margin: 5px 10px;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.life-bar{
+  width: 90%;
+  height: 20px;
+  border: 1px solid #aaa;
+  margin: auto auto;
+  border-radius: 5px;  
+}
+
+.life-bar .life{
+  height: 100%;
+  background-color: darkgreen;
+  width: 100%;
+}
+
+.danger{
+  background-color:rgb(255, 48, 11) !important;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  width: calc(100% / 10);
+  margin: 0 10px;
+  border: 0.5px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media(max-width: 800px){  
+  .scores{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scores .score{
+    width: 100%;
+    margin: 12px auto;
+  }
+
+  .buttons{
+    flex-direction: column;
+  }
+
+  .btn{
+    width: 100%;
+    margin: 10px 0px;
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+/*btns*/
+.iniciargame{
+  background-color: #4253af;
+  color: white;
+}
+
+.atack{
+  background-color: #e51c23;
+  color: white;
+  text-transform: uppercase;
+}
+
+.atackesp{
+  background-color: #ff9800;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.curar{
+  background-color: #259b24;
+  color: white;
+  text-transform: uppercase;
+}
+
+.desisitir{
+  background-color: #bbb;
+  color: black;
+  text-transform: uppercase;
+}
